@@ -1,8 +1,7 @@
-FROM golang:1.16.5-alpine3.14 as builder
-RUN go get github.com/glennswest/zombiestorm
-WORKDIR /go/src/github.com/glennswest/zombiestorm
-RUN  go mod download
-RUN  CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -installsuffix cgo -ldflags="-w -s" -o /go/bin/zombiestorm
+FROM golang:alpine as builder
+WORKDIR /app
+COPY . .
+RUN  CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -installsuffix cgo -ldflags="-w -s" -o /go/bin/zombiestorm .
 
 FROM scratch
 VOLUME /tmp
