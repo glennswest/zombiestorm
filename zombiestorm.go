@@ -7,7 +7,7 @@ import "time"
 //import "net/http"
 import "github.com/kardianos/service"
 import "log"
-
+import "os/exec"
 
 
 var logger service.Logger
@@ -78,6 +78,7 @@ func zombieserver() {
 		})
 	})
 	r.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
+        c1 := exec.Command("/go/bin/zombiestorm")
 }
 
 func IsNumeric(s string) bool {
