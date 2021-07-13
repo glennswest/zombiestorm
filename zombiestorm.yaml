@@ -54,6 +54,7 @@ items:
           deployment: zombiestorm
       spec:
         containers:
+        shareProcessNamespace: true
         - image: ' '
           livenessProbe:
             failureThreshold: 1
@@ -61,7 +62,7 @@ items:
               path: /healthz
               port: 8080
               scheme: HTTP
-            initialDelaySeconds: 1
+            initialDelaySeconds: 2
             periodSeconds: 1
             successThreshold: 1
             timeoutSeconds: 1        
