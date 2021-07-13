@@ -16,13 +16,13 @@ items:
       local: false
     tags:
     - annotations:
-        openshift.io/imported-from: glennswest/zombiestorm:a4bb815
+        openshift.io/imported-from: glennswest/zombiestorm:50de132
       from:
         kind: DockerImage
-        name: glennswest/zombiestorm:a4bb815
+        name: glennswest/zombiestorm:50de132
       generation: null
       importPolicy: {}
-      name: a4bb815
+      name: 50de132
       referencePolicy:
         type: ""
   status:
@@ -31,7 +31,7 @@ items:
   kind: Deployment
   metadata:
     annotations:
-      image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"zombiestorm:a4bb815"},"fieldPath":"spec.template.spec.containers[?(@.name==\"zombiestorm\")].image"}]'
+      image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"zombiestorm:50de132"},"fieldPath":"spec.template.spec.containers[?(@.name==\"zombiestorm\")].image"}]'
       openshift.io/generated-by: OpenShiftNewApp
     creationTimestamp: null
     labels:
